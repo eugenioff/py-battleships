@@ -1,28 +1,28 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: mypy
+  name: ms-auth
   namespace: battleships
   labels:
-    app: mypy
+    app: ms-auth
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: mypy
+      app: ms-auth
   template:
     metadata:
       labels:
-        app: mypy
+        app: ms-auth
     spec:
       containers: 
-        - name: mypy
-          image: ghcr.io/eugenioff/test-service:latest
+        - name: ms-auth
+          image: ghcr.io/eugenioff/battleship-authorizer/ms-auth:latest
           ports:
             - containerPort: 8081
           env:
             - name: AUTH_TOKEN
               valueFrom:
                 secretKeyRef:
-                  name: mypy-secret
+                  name: ms-auth-secret
                   key: AUTH_TOKEN

@@ -1,20 +1,20 @@
 apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: mypy-ingress
+  name: ms-auth-ingress
   namespace: battleships
   annotations:
     traefik.ingress.kubernetes.io/router.entrypoints: web
 spec:
   ingressClassName: traefik
   rules:
-    - host: mypy.local
+    - host: ms-auth.local
       http:
         paths:
           - path: /
             pathType: Prefix
             backend:
               service:
-                name: mypy
+                name: ms-auth
                 port:
                   number: 80

@@ -17,6 +17,4 @@ def secure(authorization: str | None = Header(default=None)):
     if authorization != f"Bearer {EXPECTED_TOKEN}":
         raise HTTPException(status_code=401, detail="Unauthorized")
 
-    return {
-        "message": "Authenticated"
-    }
+    return {"status":"ok"}
