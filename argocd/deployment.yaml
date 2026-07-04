@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: myPy
+        app: mypy
     spec:
       containers: 
         - name: mypy
