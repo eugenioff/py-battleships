@@ -1,12 +1,12 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: myPy
+  name: mypy
   namespace: battleships
 
 spec:
   selector:
-    app: myPy
+    app: mypy
   ports:
     - protocol: TCP
       port: 80
