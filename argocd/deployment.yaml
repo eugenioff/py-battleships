@@ -20,9 +20,9 @@ spec:
           image: ghcr.io/eugenioff/test-service:latest
           ports:
             - containerPort: 8081
-    env:
-      - name: AUTH_TOKEN
-        valueFrom:
-          secret_key_ref:
-            name: mypy-secret
-            key: AUTH_TOKEN
+          env:
+            - name: AUTH_TOKEN
+              valueFrom:
+                secretKeyRef:
+                  name: mypy-secret
+                  key: AUTH_TOKEN
