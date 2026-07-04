@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myPy
+  namespace: battleships
+  labels:
+    app: myPy
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myPy
+  template:
+    metadata:
+      labels:
+        app: myPy
+    spec:
+      containers: 
+        - name: myPy
+          image: ghcr.io/eugenioff/test-service:latest
+          ports:
+            - containerPort: 8081
+    env:
+      - name: AUTH_TOKEN
+        value_from 
+          secret_key_ref:
+            name: myPy-secret
+            key: AUTH_TOKEN
