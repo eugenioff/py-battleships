@@ -22,7 +22,7 @@ spec:
             - containerPort: 8081
     env:
       - name: AUTH_TOKEN
-        value_from 
+        value_from:
           secret_key_ref:
             name: myPy-secret
             key: AUTH_TOKEN
