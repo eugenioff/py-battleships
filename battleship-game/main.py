@@ -14,6 +14,7 @@ AUTH_URL = "http://ms-auth.local/secure"
 @app.websocket("/ws")
 async def websocket_test(ws: WebSocket):
     global total
+    total= 0
     await ws.accept()
 
     await ws.send_text("WebSocket connection established.")
