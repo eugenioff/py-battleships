@@ -9,7 +9,7 @@ import fcn_utils
 
 app = FastAPI()
 
-AUTH_URL = "http://ms-auth.local:32080/secure"
+AUTH_URL = "http://ms-auth.local/secure"
 
 total = 0
 
