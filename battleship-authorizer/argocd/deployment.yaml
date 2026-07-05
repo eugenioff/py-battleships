@@ -19,7 +19,7 @@ spec:
         - name: ms-auth
           image: ghcr.io/eugenioff/ms-auth:latest
           ports:
-            - containerPort: 8081
+            - containerPort: 8000
           env:
             - name: AUTH_TOKEN
               valueFrom:

@@ -7,7 +7,7 @@ spec:
   entryPoints:
     - web
   routes:
-    - match: Host(`ms-game.local`) && PathPrefix(`/ws`)
+    - match: Host(`ms-game.local`)
       kind: Rule
       services:
         - name: ms-game
