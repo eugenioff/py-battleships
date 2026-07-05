@@ -17,8 +17,8 @@ total = 0
 async def websocket_test(ws: WebSocket):
     await ws.accept()
 
-    print("WebSocket connection established.")
-    print("Waiting for authentication message...")
+    await ws.send_text("WebSocket connection established.")
+    await ws.send_text("Waiting for authentication message...")
     auth_msg = await ws.receive_json()
     token = auth_msg.get("token")
 
