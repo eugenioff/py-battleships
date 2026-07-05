@@ -11,7 +11,14 @@ spec:
     - host: ms-game.local
       http:
         paths:
-          - path: /
+          - path: /ws
+            pathType: Prefix
+            backend:
+              service:
+                name: ms-game
+                port:
+                  number: 8082
+          - path: /ws
             pathType: Prefix
             backend:
               service:
