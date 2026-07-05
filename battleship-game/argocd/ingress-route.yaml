@@ -1,0 +1,14 @@
+apiVersion: traefik.io/v1alpha1
+kind: IngressRoute
+metadata:
+  name: ms-game
+  namespace: battleships
+spec:
+  entryPoints:
+    - web
+  routes:
+    - match: Host(`ms-game.localhost`) && PathPrefix(`/ws`)
+      kind: Rule
+      services:
+        - name: ms-game
+          port: 8082
