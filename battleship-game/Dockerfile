@@ -1,5 +1,5 @@
 FROM python:3.14
-workdir /app
+WORKDIR /app
 
 COPY requirements.txt .
 

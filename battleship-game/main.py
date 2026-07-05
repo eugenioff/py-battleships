@@ -7,13 +7,13 @@ import requests
 import fcn_game
 import fcn_utils
 
-fapi = FastAPI()
+app = FastAPI()
 
 AUTH_URL = "http://ms-auth.local:32080/secure"
 
 total = 0
 
-@fapi.websocket("/ws")
+@app.websocket("/ws")
 async def websocket_test(ws: WebSocket):
     await ws.accept()
 
