@@ -11,4 +11,4 @@ spec:
       kind: Rule
       services:
         - name: ms-game
-          port: 8082
+          port: 80
