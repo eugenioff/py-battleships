@@ -11,10 +11,9 @@ app = FastAPI()
 
 AUTH_URL = "http://ms-auth.local/secure"
 
-total = 0
-
 @app.websocket("/ws")
 async def websocket_test(ws: WebSocket):
+    global total
     await ws.accept()
 
     await ws.send_text("WebSocket connection established.")
