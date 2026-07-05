@@ -6,6 +6,11 @@ on:
     paths:
       - "battleship-authorizer/**"
       - "battleship-game/**"
+    paths-ignore:
+      - "battleship-authorizer/README.md"
+      - "battleship-game/README.md"
+      - "battleship-authorizer/argocd/**"
+      - "battleship-game/argocd/**"
 
 permissions:
   contents: read

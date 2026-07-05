@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: ms-game
+  namespace: battleships
+  labels:
+    app: ms-game
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ms-game
+  template:
+    metadata:
+      labels:
+        app: ms-game
+    spec:
+      containers:
+        - name: ms-game
+          image: ghcr.io/eugenioff/ms-game:latest
+          ports:
+          - containerPort: 8082

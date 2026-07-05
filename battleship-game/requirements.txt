@@ -1,0 +1,4 @@
+fastapi
+dataclasses
+random
+requests

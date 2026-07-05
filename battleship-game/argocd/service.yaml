@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: ms-game
+  namespace: battleships
+
+spec:
+  selector:
+    app: ms-game
+  ports:
+    - protocol: TCP
+      port: 80
+      targetPort: 8082
