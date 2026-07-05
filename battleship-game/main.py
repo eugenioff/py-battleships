@@ -39,12 +39,13 @@ async def websocket_test(ws: WebSocket):
                 await ws.send_text("Invalid input. Please type an integer.")
                 continue
         
-        if num == 0:
-            await ws.send_text("Exiting. Goodbye!")
-            await ws.close()
-        
-        total += num
-        await ws.send_text(f"Current total: {total}")
+            if num == 0:
+                await ws.send_text("Exiting. Goodbye!")
+                await ws.close()
+                break
+
+            total += num
+            await ws.send_text(f"Current total: {total}")
     
     except WebSocketDisconnect:
         print("WebSocket connection closed.")
