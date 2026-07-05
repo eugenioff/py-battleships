@@ -62,3 +62,6 @@ def ai_attack(field, ships):
     elif field[x][y].ship == 0:
         print("AI missed!")
         hit_value = False
+
+
+        
