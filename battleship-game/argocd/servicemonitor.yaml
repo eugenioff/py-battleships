@@ -8,11 +8,11 @@ metadata:
 
 spec:
   selector:
-    match-labels:
+    matchLabels:
       app: ms-game
 
   namespaceSelector:
-    match-labels:
+    matchLabels:
       - battleships
 
   endpoints:
