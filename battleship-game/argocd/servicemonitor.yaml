@@ -10,11 +10,7 @@ spec:
   selector:
     matchLabels:
       app: ms-game
-
-  namespaceSelector:
-    matchLabels:
-      app.kubernetes.io/metadata.name=battleships: battleships
-
+      
   endpoints:
     - port: metrics
       path: /metrics
