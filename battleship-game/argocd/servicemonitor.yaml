@@ -13,7 +13,7 @@ spec:
 
   namespaceSelector:
     matchLabels:
-      - battleships
+      kubernetes.io/metadata.name=battleships: battleships
 
   endpoints:
     - port: metrics
