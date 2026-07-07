@@ -3,6 +3,8 @@ kind: Service
 metadata:
   name: ms-game
   namespace: battleships
+  labels:
+    app: ms-game
 
 spec:
   selector:
