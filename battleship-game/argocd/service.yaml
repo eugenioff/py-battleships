@@ -8,7 +8,8 @@ spec:
   selector:
     app: ms-game
   ports:
-    - protocol: TCP
+    - name: app
+      protocol: TCP
       port: 80
       targetPort: 8000
     - name : metrics
