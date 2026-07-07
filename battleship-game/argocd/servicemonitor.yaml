@@ -1,0 +1,21 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  name: ms-game
+  namespace: battleships
+  labels:
+    release: kube-prometheus-stack
+
+spec:
+  selector:
+    match-labels:
+      app: ms-game
+
+  namespaceSelector:
+    match-labels:
+      - battleships
+
+  endpoints:
+    - port: metrics
+      path: /metrics
+      interval: 30s
