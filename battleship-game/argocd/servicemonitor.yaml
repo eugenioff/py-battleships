@@ -4,13 +4,13 @@ metadata:
   name: ms-game
   namespace: battleships
   labels:
-    release: kube-prometheus-stack
+    release: prometheus
 
 spec:
   selector:
     matchLabels:
       app: ms-game
-      
+
   endpoints:
     - port: metrics
       path: /metrics
