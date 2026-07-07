@@ -1,5 +1,7 @@
 fastapi
+fastapi.responses
 uvicorn
 websockets
 dataclasses
 requests
+prometheus_client

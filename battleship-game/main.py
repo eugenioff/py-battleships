@@ -1,5 +1,7 @@
 from dataclasses import dataclass
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi.responses import Response
+from prometheus_client import Counter, generate_latest, CONTENT_TYPE_LATEST
 
 import random
 import requests
@@ -10,6 +12,10 @@ import fcn_utils
 app = FastAPI()
 
 AUTH_URL = "http://ms-auth.local/secure"
+
+@app.get("/metrics")
+def metrics():
+    return Response(generate_latest(), media_type=CONTENT_TYPE_LATEST)
 
 @app.websocket("/ws")
 async def websocket_test(ws: WebSocket):

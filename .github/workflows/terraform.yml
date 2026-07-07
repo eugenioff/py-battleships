@@ -1,0 +1,48 @@
+name: Terraform
+on:
+  workflow_dispatch:
+    inputs:
+      AWS_REGION:
+        description: 'AWS target region'
+        required: true
+        default: 'eu-central-1'
+        type: choice
+        options:
+          - eu-central-1
+          - eu-west-1
+          - eu-south-1
+      AWS_ACCESS_KEY:
+        description: 'AWS GitHub User access key'
+        required: true
+        type: string
+      AWS_SECRET_KEY:
+        description: 'AWS GitHub User secret key'
+        required: true
+        type: string
+      Environment:
+        description: 'Environment to deploy'
+        required: true
+        default: 'dev'
+        type: choice
+        options:
+          - dev
+          - prod
+
+
+jobs:
+  terraform-plan:
+    runs-on: ubuntu-latest
+    name: Terraform Plan
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      
+      - name: Terraform Plan
+        uses: dflook/terraform-plan@v2
+        with:
+          path: aws-terraform-config
+    
+
+  

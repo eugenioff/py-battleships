@@ -13,3 +13,4 @@ def print_field(field,value):
                 print(" ".join([str(cell.render) for cell in row]))
         case _:
             print("Invalid value. Please choose 'ship', 'ai_weight', or 'render'.")
+
